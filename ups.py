@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from tabulate import tabulate
 from fake_useragent import UserAgent
 from urllib2 import Request, urlopen
-import re,urllib2
+import re
 USER_AGENT = UserAgent()
 TrackingNumbers = []
 
