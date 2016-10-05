@@ -18,7 +18,7 @@ for trcknum in TrackingNumbers:
 	soup = BeautifulSoup(page,'html.parser')
 	rows = soup.find('table',{'class':'dataTable'}).findAll('tr')
 	for row in rows:
-		cols = [re.sub('\s+', ' ', ele.text.strip()).encode('ascii') for ele in row.findAll('td')]
+		cols = [re.sub('\s+', ' ', ele.text.strip()).encode('ascii', 'ignore') for ele in row.findAll('td')]
 		if cols: track_table.append([ele for ele in cols])
 
 	print tabulate(track_table, headers =['Location','Date','Time','Info'],tablefmt="grid")
